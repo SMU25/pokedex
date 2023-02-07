@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import { Category } from "src/components/Category";
+import { Pokemons } from "src/components/Pokemons";
 import { Select } from "src/components/Select";
 
 const options = [
@@ -11,10 +12,11 @@ const options = [
 const Home: FC = () => {
   return (
     <div>
-      <div className="flex justify-between">
+      <div className="flex justify-between items-baseline">
         <Category />
-        <Select className="max-w-40 w-full" options={options} />
+        <Select className="max-w-40 w-full ml-16" options={options} />
       </div>
+      <Pokemons />
     </div>
   );
 };

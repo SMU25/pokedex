@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import cn from "classnames";
-import { ReactComponent as IconSearch } from "src/assets/search.svg";
+import { ReactComponent as IconSearch } from "src/assets/icons/search.svg";
 
 const PLACEHOLDER_TEXT = "Search pokemons...";
 

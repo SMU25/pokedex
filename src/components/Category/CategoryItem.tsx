@@ -1,21 +1,19 @@
-import React from "react";
+import React, { FC } from "react";
 import cn from "classnames";
 
-export const CategoryItem = () => {
-  return (
-    <li
-      className={cn(
-        "bg-blue-light mr-2.5 mb-2.5 py-2 px-4 font-medium border rounded-xl transition-all",
-        {
-          "!bg-blue-primary text-white": false,
-        }
-      )}
-    >
-      <button>
-        {Math.round(Math.random() * 10000) +
-          Math.round(Math.random() * 1000) +
-          Math.random()}
-      </button>
-    </li>
-  );
-};
+interface Props {
+  name: string;
+}
+
+export const CategoryItem: FC<Props> = ({ name }) => (
+  <li
+    className={cn(
+      "bg-blue-light mr-2.5 mb-2.5 py-2 px-4 text-center font-medium border rounded-xl transition-all active:translate-y-0.5",
+      {
+        "!bg-blue-primary text-white": false,
+      }
+    )}
+  >
+    <button>{name}</button>
+  </li>
+);

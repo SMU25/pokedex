@@ -17,6 +17,8 @@ module.exports = {
       },
       boxShadow: {
         "light-bottom-fog": "2px 4px 8px rgba(0, 0, 0, 0.1);",
+        "light-outer": "4px 6px 12px rgba(0, 0, 0, 0.3);",
+        "card-edges": "1px 2px 4px rgba(0, 0, 0, 0.1);",
       },
       screens: {
         default: "0px",
