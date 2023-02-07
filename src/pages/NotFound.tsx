@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 
-const NotFound: FC = () => {
-  return <div>NotFound</div>;
-};
+const HEADING = "Page not found";
+
+const NotFound: FC = () => <div>{HEADING}</div>;
 
 export default NotFound;
