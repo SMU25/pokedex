@@ -29,8 +29,8 @@ export const Pagination: FC<Props> = ({ itemsCount, limit }) => {
       disabledClassName="pointer-events-none"
       disabledLinkClassName="bg-gray-200 pointer-events-none"
       pageCount={pageCount}
-      onPageChange={() => {
-        console.log(pageCount);
+      onPageChange={(e) => {
+        console.log(e);
       }}
     />
   );

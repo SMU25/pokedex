@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import ReactSelect from "react-select";
+import { VoidFuncWithValue } from "src/types";
 
 interface Option {
   value: string | number;
@@ -9,8 +10,13 @@ interface Option {
 interface Props {
   className?: string;
   options: Option[];
+  onSelectOption: VoidFuncWithValue;
 }
 
-export const Select: FC<Props> = ({ className, options }) => {
-  return <ReactSelect className={className} options={options} />;
+export const Select: FC<Props> = ({ className, options, onSelectOption }) => {
+  const onChange = ({ value }: Option) => onSelectOption(value);
+
+  return (
+    <ReactSelect className={className} options={options} onChange={onChange} />
+  );
 };
