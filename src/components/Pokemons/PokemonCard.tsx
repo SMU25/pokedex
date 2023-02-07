@@ -1,10 +1,12 @@
 import React, { FC } from "react";
+import { Link } from "react-router-dom";
 import cn from "classnames";
 import { TypesColors } from "./types";
 
 const AVATAR_SIZE = 100;
 
 interface Props {
+  isLink?: boolean;
   isShownParams?: boolean;
   className?: string;
   avatarClassName?: string;
@@ -15,13 +17,14 @@ interface Props {
 //CHANGE  - чи все типізловано чи норм імпорти, чи скрізь видалено моки
 
 export const PokemonCard: FC<Props> = ({
+  isLink,
   isShownParams,
   className,
   avatarClassName,
   titleClassName,
   typesClassName,
 }) => {
-  return (
+  const Component = (
     <div
       className={cn(
         "flex flex-col items-center py-4 px-2 text-center shadow-card-edges",
@@ -50,9 +53,9 @@ export const PokemonCard: FC<Props> = ({
           name
         </h4>
         <ul className={typesClassName}>
-          <li className={cn("mt-0.5", TypesColors.fairy)}>type</li>
-          <li className={cn("mt-0.5", TypesColors.dark)}>type</li>{" "}
-          <li className={cn("mt-0.5", TypesColors.dragon)}>type</li>
+          <li className={cn("mt-0.5 rounded text-white", TypesColors.normal)}>
+            type
+          </li>
         </ul>
 
         {isShownParams && (
@@ -71,4 +74,8 @@ export const PokemonCard: FC<Props> = ({
       </div>
     </div>
   );
+
+  if (isLink) return <Link to="12">{Component}</Link>;
+
+  return Component;
 };

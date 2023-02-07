@@ -1,7 +1,8 @@
 import React, { FC } from "react";
 import { Category } from "src/components/Category";
-import { Pokemons } from "src/components/Pokemons";
 import { Select } from "src/components/Select";
+import { Pokemons } from "src/components/Pokemons";
+import { Pagination } from "src/components/Pagination";
 
 const options = [
   { value: 10, label: "10" },
@@ -16,7 +17,8 @@ const Home: FC = () => {
         <Category />
         <Select className="max-w-40 w-full ml-16" options={options} />
       </div>
-      <Pokemons />
+      <Pokemons isCardLink />
+      <Pagination itemsCount={1279} limit={10} />
     </div>
   );
 };
